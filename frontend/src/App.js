@@ -9,6 +9,7 @@ import LoginSignUp from "./component/auth/loginSignUp";
 import Home from "./component/home/home"
 
 import Eventdetails from "./component/home/EvenDetails";
+import StoreEvent  from './component/home/StoreEvent';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
          <Route path="/" element={<Home />}></Route>
          <Route path="/Home" element={<Home />}></Route>
         <Route path="/loginSignUp" element={<LoginSignUp/>}></Route>
+
+        <Route path="/storeevent" element={<StoreEvent/>}></Route>
         <Route path='/event_scheduled/:id' element={<Eventdetails/>}/>
 
       </Routes>

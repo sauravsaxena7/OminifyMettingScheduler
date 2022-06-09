@@ -12,8 +12,35 @@
     flex-direction: column;
   }
   .highlight {
-    color:#dc071c;
+    color:white !important;
+    
+    background-color: #38d39f !important;
  }
+ h1{
+   font-size: 2.6rem !important;
+
+   font-weight: 200;
+   color:#dc071c;
+
+ }
+ .roma{
+   align-items: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   margin-top: 200px;
+ }
+ .d1{
+
+  align-items: center;
+  justify-content: center;
+ }
+
+ .section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  position: relative;
+}
   #myOrdersHeading {
     text-align: center;
     font: 400 1.2vmax "Roboto";

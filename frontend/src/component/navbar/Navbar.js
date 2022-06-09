@@ -27,7 +27,7 @@ const Navbar = (props) => {
     const toggle = () => setIsOpen(!isOpen);
 
     return (
-        <NavBarContainer {...props}>
+        <NavBarContainer  {...props} >
           <Logo
             w="500px"
             color={["white", "white", "primary.500", "primary.500"]}
@@ -115,8 +115,9 @@ const CloseIcon = () => (
       const res = await logoutUser({ token });
 
 
-      if(res.data.status === "success")
+      if(res.status === "success")
       removeToken('token');
+      localStorage.removeItem('token');
       navigate('/loginSignUp');
       
 
@@ -158,7 +159,7 @@ const CloseIcon = () => (
         >
           
           <MenuItem to="/">Home</MenuItem>
-          {token ? ( <MenuItem to="/sheduled">Scheduled Your Meeting</MenuItem>)
+          {token ? ( <MenuItem to="/storeevent">Scheduled Your Meeting</MenuItem>)
           :( <MenuItem to="/loginSignUp">Scheduled Your Meeting</MenuItem>)}
          
          

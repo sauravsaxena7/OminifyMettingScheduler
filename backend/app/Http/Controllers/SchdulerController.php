@@ -82,6 +82,12 @@ class SchdulerController extends Controller
                 'message'=>'Operation Successfull!!'
             ],201);
  
+        }else{
+            return response([
+                
+                'status'=>'failed',
+                'message'=>'Operation failed'
+            ],401);
         }
     }
 

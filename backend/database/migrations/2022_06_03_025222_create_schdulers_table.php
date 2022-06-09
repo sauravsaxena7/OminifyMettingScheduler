@@ -19,8 +19,8 @@ class CreateSchdulersTable extends Migration
             $table->string('user_name');
             $table->string('email');
             $table->string('description');
-            $table->integer('start_time');
-            $table->integer('end_time');
+            $table->string('start_time');
+            $table->string('end_time');
             $table->string('day_of_the_week');
             $table->integer('date');
             $table->integer('month');

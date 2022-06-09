@@ -23,18 +23,19 @@ const EvenDetails = () => {
 
 
 
-    const {data ,isFetching,isSuccess,isError} = useGetSingleEventsQuery(id);
+    const {data ,isFetching,isSuccess} = useGetSingleEventsQuery(id);
 
     // program to check leap year
 function checkLeapYear(year) {
 
   //three conditions to find out the leap yearss
-  if ((0 == year % 4) && (0 != year % 100) || (0 == year % 400)) {
+  if (((0 === year % 4) && (0 !== year % 100)) || (0 === year % 400)) {
      return 1;
   } else {
       return 0;
   }
 }
+
 
 
 
@@ -86,7 +87,9 @@ function checkLeapYear(year) {
 
       
 
-      let schduled_day = data.events.day;
+      let schduled_day = data.events.day_of_the_week;
+
+      
       
 
      
@@ -186,11 +189,42 @@ function checkLeapYear(year) {
       
      }
 
+     //git remote add origin https://github.com/sauravsuman7/OminifyMettingScheduler.git
     useEffect(()=>{
 
         if(isSuccess){
 
-          // onChange(new Date(12,12,2021));
+         
+
+            let date = data.events.date;
+            let year = data.events.year;
+            let month = data.events.month;
+
+            let str1='';
+            if(month<10){
+              str1 =  '0'+String(month)+'-';
+    
+            }else{
+              str1 =  String(month)+'-';
+            }
+    
+            if(date<10){
+              str1 =  str1+'0'+String(date)+'-';
+    
+            }else{
+              str1 =  str1+String(date)+'-';
+            }
+    
+            str1=str1+String(year);
+    
+            
+    
+            let date1 = new Date(str1);
+
+            onChange(date1);
+      
+      
+            
     
         }
 
@@ -251,4 +285,4 @@ style={{ height: 500 }}
   )
 }
 
-export default EvenDetai
+export default EvenDetails

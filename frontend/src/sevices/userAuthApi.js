@@ -27,6 +27,25 @@ export const userAuthApi = createApi({
      
     }),
 
+    StoreEvent: builder.mutation({
+      query:(actualData)=>{
+          return{
+              url:'new_event',
+              method:'POST',
+              body:actualData,
+              headers:{
+                  'Content-type':'application/json',
+                  'Accept': 'application/json',
+                  'authorization': `Bearer ${localStorage.getItem('token')}`,
+              }
+
+
+
+          }
+      }
+   
+  }),
+
 
     loginUser: builder.mutation({
       query:(user)=>{
@@ -109,4 +128,4 @@ export const userAuthApi = createApi({
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useRegisterUserMutation,useLoginUserMutation,useLogoutUserMutation ,useGetLoggedUserQuery,useGetAllEventsQuery,useGetSingleEventsQuery} = userAuthApi
+export const { useRegisterUserMutation,useLoginUserMutation,useLogoutUserMutation,useStoreEventMutation ,useGetLoggedUserQuery,useGetAllEventsQuery,useGetSingleEventsQuery} = userAuthApi

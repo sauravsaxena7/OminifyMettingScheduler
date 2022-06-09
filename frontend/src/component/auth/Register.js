@@ -33,7 +33,6 @@ const Register = () => {
         const {
           isOpen: isVisible,
           onClose,
-          onOpen,
         } = useDisclosure({ defaultIsOpen: true })
 
         const navigate = useNavigate();

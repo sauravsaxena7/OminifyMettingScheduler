@@ -18,6 +18,7 @@ import LaunchIcon from "@material-ui/icons/Launch";
 import { DataGrid } from "@material-ui/data-grid";
 
 
+
 import "./home.css";
 
 const Home = () => {
@@ -114,8 +115,8 @@ if(isSuccess1){
       event:item.event_name,
       id:item.id,
       description:item.description,
-      e_t:item.end_time+" : "+"00",
-      s_t:item.start_time+" : "+"00",
+      e_t:item.end_time,
+      s_t:item.start_time,
       d_o_w:item.day_of_the_week,
   
   
@@ -170,7 +171,7 @@ if(isSuccess1){
 
     <Fragment>
 
-<div className="myOrdersPage">
+{isSuccess  ? (<div className="myOrdersPage">
             <DataGrid
               rows={rows}
               columns={columns}
@@ -181,7 +182,14 @@ if(isSuccess1){
             />
   
             {data && <Typography id="myOrdersHeading">{data.user.name}'s Events</Typography>}
+          </div>):(
+          <div className='roma'>
+
+            <h1>Scheduled YoUR mEEtinG WiTh  US..</h1>
+
+            <Button ><Link to='loginSignUp'>LoginSignUp</Link></Button>
           </div>
+          )}
 
 
        
